@@ -1,13 +1,3 @@
-/*jslint browser: true, undef: true, eqeqeq: true, nomen: true, white: true */
-/*global window: false, document: false */
-
-/*
- * fix looped audio
- * add fruits + levels
- * fix what happens when a ghost is eaten (should go back to base)
- * do proper ghost mechanics (blinky/wimpy etc)
- */
-
 var NONE        = 4,
     UP          = 3,
     LEFT        = 2,
@@ -43,9 +33,6 @@ Pacman.Ghost = function (game, map, colour) {
         };
     };
 
-    /* Collision detection(walls) is done when a ghost lands on an
-     * exact block, make sure they dont skip over it
-     */
     function addBounded(x1, x2) {
         var rem    = x1 % 10,
             result = rem + x2;
@@ -327,6 +314,7 @@ Pacman.User = function (game, map) {
         newLevel();
     }
 
+    //Fungsi untuk melakukan reset terhadap pemikiran AI tentang dimana pill berada pada setiap level. (Perlu di cek lagi)
     function newLevel() {
         setTimeout(function() {
           AGENT.status = {
@@ -338,7 +326,7 @@ Pacman.User = function (game, map) {
             score: PACMAN.getUserState().score
           };
           AGENT.curre
-          AGENT.beenTo = [ // Reset where the AI thinks the pills are.
+          AGENT.beenTo = [ 
             "11,8",
             "9,0",
             "9,1",
