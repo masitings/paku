@@ -103,17 +103,11 @@ var AGENT;
             }
           });
 
-          var closest = 283;
-          var goThisWay = 0;
-          goes.forEach(function (here, index, array) {
-            var distance = calcDistance(here, goForThisOne);
-            if (distance < closest) {
-              closest = distance;
-              goThisWay = index;
-            }
-          });
-          var bestChoice = goes[goThisWay][2];
-        }
+          var closest = 283;           var goThisWay = 0;
+goes.forEach(function (here, index, array) {             var distance =
+calcDistance(here, goForThisOne);             if (distance < closest) {
+closest = distance;               goThisWay = index;             }
+});           var bestChoice = goes[goThisWay][2];         }
 
         // Memutuskan jalan mana yang akan di ambil berdasarkan dengan potensi dikelilingi oleh ghost dan prioritas (mengarah ke pill dan menjauh dari ghost).
         var direction;
