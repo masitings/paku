@@ -149,21 +149,25 @@ var AGENT;
         if (direction === 'left') { PACMAN.left() }
       },
       update: function (user, ghosts) { 
-        // Lari menuju ghost yang terkena efek dari pill sekaligus memeriksa apakah posisi board tersebut telah di lalui.
-        if (user.lives !== AGENT.status.lives) {
-          AGENT.status.goingTo = BOARD[11][7];
-          AGENT.status.lives -= 1;
-        }
-        if (user.position.x === AGENT.status.goingTo.x && user.position.y === AGENT.status.goingTo.y) {
-          var userState = PACMAN.getUserState();
-          AGENT.status.currentPosition = AGENT.status.goingTo;
-          // AGENT.status.eaten = userState.eaten;
-          AGENT.status.lives = userState.lives;
-          AGENT.status.score = userState.score;
-          AGENT.status.ghosts = PACMAN.getGhosts();
 
-          AGENT.move(AGENT.status, AGENT.status.goingTo.go);
-        }
+        // Lari menuju ghost yang terkena efek dari pill sekaligus memeriksa apakah posisi board tersebut telah di lalui. 
+        // (Comment untuk matikan AI)
+
+        // if (user.lives !== AGENT.status.lives) {
+        //   AGENT.status.goingTo = BOARD[11][7];
+        //   AGENT.status.lives -= 1;
+        // }
+        // if (user.position.x === AGENT.status.goingTo.x && user.position.y === AGENT.status.goingTo.y) {
+        //   var userState = PACMAN.getUserState();
+        //   AGENT.status.currentPosition = AGENT.status.goingTo;
+        //   // AGENT.status.eaten = userState.eaten;
+        //   AGENT.status.lives = userState.lives;
+        //   AGENT.status.score = userState.score;
+        //   AGENT.status.ghosts = PACMAN.getGhosts();
+
+        //   AGENT.move(AGENT.status, AGENT.status.goingTo.go);
+        // }
+        
       }
     };
 
